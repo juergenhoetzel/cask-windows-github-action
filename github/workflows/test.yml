@@ -1,0 +1,40 @@
+name: "CI"
+on:
+  pull_request:
+  push:
+    # Comment out this section to enable testing of all branches.
+    branches:
+      - master
+jobs:
+    - name: Test
+      run: make test
+  windows-build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+    steps:
+    - uses: cask/setup-cask@master
+    - name: Echo Path after cask
+      run: |
+        echo "$env:PATH"
+    - name: Install scoop-emacs
+      run: |
+        Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+        Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+        scoop update
+        scoop bucket add extras
+        scoop install emacs
+        echo "$env:PATH" | Out-File -Append -FilePath $env:GITHUB_PATH -Encoding utf8
+    - uses: actions/checkout@v2
+    - name: Echo Path after install scoop emacs
+      run: |
+        echo "$env:PATH"
+    - name: Emacs version
+      run: |
+        emacs --version
+    - name: Cask version
+      run: |
+        cask --version
+
+
+
