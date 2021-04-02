@@ -33,5 +33,8 @@ jobs:
       run: |
         cask --version
 
+    - name: Exec buttercup
+      run: |
+        cask exec  buttercup
 
 
