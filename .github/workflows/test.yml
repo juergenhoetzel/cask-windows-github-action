@@ -35,7 +35,11 @@ jobs:
     - name: Exec buttercup
       run: |
         cask install
+        echo exec path
+        cask exec path
+        echo exec which buttercup.bat
         cask exec which buttercup.bat
+        echo exec which buttercup
         cask exec which buttercup
 
 
