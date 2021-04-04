@@ -35,7 +35,7 @@ jobs:
 
     - name: Exec buttercup
       run: |
-        bash -x cask path
-        bash -x cask exec  buttercup
+        cask cmd /c echo "%PATH%"
+        cask exec  buttercup
 
 
