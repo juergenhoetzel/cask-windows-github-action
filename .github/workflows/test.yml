@@ -32,18 +32,10 @@ jobs:
     - name: Cask version
       run: |
         cask --version
-
     - name: Exec buttercup
       run: |
-        which --version
         cask install
-        echo path
-        cask path
-        echo exec-path
-        cask exec-path
-        echo exec cmd echo PATH
-        cask exec cmd /c echo "%PATH%"
-        echo exec buttercup
-        cask exec buttercup
-        cask exec cmd /c buttercup
+        which buttercup.bat
+        get-command buttercup
+
 
