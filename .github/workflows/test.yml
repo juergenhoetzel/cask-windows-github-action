@@ -35,6 +35,9 @@ jobs:
 
     - name: Exec buttercup
       run: |
+        cask install
+        cask path
+        cask exec-path
         cask cmd /c echo "%PATH%"
         cask exec  buttercup
 
