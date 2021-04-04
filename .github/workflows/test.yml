@@ -35,7 +35,7 @@ jobs:
     - name: Exec buttercup
       run: |
         cask install
-        which buttercup.bat
-        get-command buttercup
+        cask exec which buttercup.bat
+        cask exec which buttercup
 
 
