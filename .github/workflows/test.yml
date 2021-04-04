@@ -35,6 +35,7 @@ jobs:
 
     - name: Exec buttercup
       run: |
+        which --version
         cask install
         echo path
         cask path
