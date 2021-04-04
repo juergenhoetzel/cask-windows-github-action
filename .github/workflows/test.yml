@@ -38,7 +38,7 @@ jobs:
         cask install
         cask path
         cask exec-path
-        cask cmd /c echo "%PATH%"
-        cask exec  buttercup
-
+        cask exec cmd /c echo "%PATH%"
+        cask exec buttercup
+        cask exec cmd /c buttercup
 
