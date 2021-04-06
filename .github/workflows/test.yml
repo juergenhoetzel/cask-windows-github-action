@@ -38,6 +38,7 @@ jobs:
         Get-ChildItem -Path . -Recurse
         cask path
         cask exec buttercup
-        
+        cask exec d:/a/cask-windows-github-action/cask-windows-github-action/.cask/27.2/elpa/buttercup-20210105.2255/bin/buttercup.bat
+
 
 
