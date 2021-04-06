@@ -36,6 +36,7 @@ jobs:
       run: |
         cask install
         Get-ChildItem -Path . -Recurse
+        cask path
         cask exec buttercup
         
 
