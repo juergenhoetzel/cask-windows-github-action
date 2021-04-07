@@ -32,6 +32,9 @@ jobs:
     - name: Cask version
       run: |
         cask --version
+    - name: Echo github context
+      run:
+        | echo ${{ github.base_ref }}
     - name: Exec buttercup
       run: |
         cask install
